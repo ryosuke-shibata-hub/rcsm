@@ -8,6 +8,11 @@ class SettingList extends Model
 {
     public static function getSettingList($getListCount)
     {
-        # code...
+        $settingList = SettingList::where('delete_flg', config('const.SETTING_LIST.SETTING_MAIN_IMG_PASS'))
+        ->orderby('create_date', 'desc')
+        ->limit($getListCount)
+        ->get();
+
+        return $settingList;
     }
 }

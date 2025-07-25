@@ -12,11 +12,11 @@ class MainController extends Controller
         try {
 
             $getListCount = config('const.SETTING_LIST.GET_COUNT');
-            dd($getListCount);
-            $setting_list = SettingList::getSettingList();
+            $setting_list = SettingList::getSettingList($getListCount);
 
+            return view('main.main')
+            ->with('setting_list', $setting_list);
 
-            return view('main.main');
         } catch (\Throwable $th) {
             // return view('main.main');
         }
