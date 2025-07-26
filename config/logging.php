@@ -6,6 +6,16 @@ use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 
 return [
+        /*
+    |--------------------------------------------------------------------------
+    | SQL Log
+    |--------------------------------------------------------------------------
+    */
+
+    'sql' => [
+        'enable' => env('LOG_SQL_ENABLE', false),
+        'slow_query_time' => env('LOG_SQL_SLOW_QUERY_TIME', 2000), // ms
+    ],
 
     /*
     |--------------------------------------------------------------------------

@@ -15,4 +15,13 @@ class SettingList extends Model
 
         return $settingList;
     }
+
+    public static function detail($id)
+    {
+        $targetSettingDetail = SettingList::where('delete_flg', config('const.SETTING_LIST.SETTING_MAIN_IMG_PASS'))
+        ->where('setting_id', $id)
+        ->first();
+
+        return $targetSettingDetail;
+    }
 }

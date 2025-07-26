@@ -17,9 +17,11 @@
         </div>
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
-                @foreach($setting_list as $setting_list)
+                @foreach($settingList as $setting_list)
                     <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                        <a class="block relative h-48 rounded overflow-hidden" href="#">
+                        <a class="block relative h-48 rounded overflow-hidden"
+                            href="/setting/detail/{{ $setting_list->setting_id }}"
+                        >
                             <img
                                 alt="ecommerce"
                                 class="object-cover object-center w-full h-full block"
