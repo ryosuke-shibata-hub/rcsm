@@ -14,16 +14,20 @@
                 </div>
 
                 <div class="md:pt-8">
-                    <p class="text-center font-bold text-indigo-500 md:text-left">Who we are</p>
-
-                    <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">
-
-                    </h1>
-
+                    <p class="text-center font-bold text-indigo-500 md:text-left">{{ $targetSettingDetail->setting_title }}</p>
                     <p
                         class="mb-6 text-gray-500 sm:text-lg md:mb-8">
-                        This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. It may be used to display a sample of fonts or generate text for testing. Filler text is dummy text which has no meaning however looks very similar to real text.
+                        {{ $targetSettingDetail->setting_comment }}
                     </p>
+                </div>
+            </div>
+            <div class="pt-5">
+                <div class="p-8 rounded border border-gray-200">
+                    @include('main.setting_detail.machine_setting')
+                    <div class="py-3"></div>
+                    @include('main.setting_detail.device_setting')
+                    <div class="py-3"></div>
+                    @include('main.setting_detail.other_setting')
                 </div>
             </div>
         </div>
