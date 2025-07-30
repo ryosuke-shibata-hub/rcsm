@@ -1,20 +1,6 @@
 @extends('components.mainBody')
 @section('content')
-@include('components.parts.newsList')
     <section class="text-gray-600 body-font">
-        <div class="bg-white py-6 sm:py-8 lg:py-12">
-            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                <h2
-                    class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                       RCセッティングのすべてを、ひとつの場所で。
-                </h2>
-                <p
-                    class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                    全国のRCファンが集う、セッティング共有プラットフォーム
-                    ツーリング、オフロード、ドリフト…どんなジャンルのRCカーでもOK。自分のセッティングを手軽に記録し、仲間と共有することで、新しい発見とアイデアが広がります。
-                </p>
-            </div>
-        </div>
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4">
                 @foreach($settingList as $setting_list)
@@ -52,14 +38,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-            <div class="text-center pt-16">
-                <a
-                    href="/setting/list/all"
-                    role="link"
-                    class="bg-[linear-gradient(#262626,#262626),linear-gradient(#3b82f6,#3b82f6)] bg-[length:100%_2px,0_2px] bg-[position:100%_100%,0_100%] bg-no-repeat text-neutral-950 transition-[background-size,color] duration-500 hover:bg-[0_2px,100%_2px] hover:text-[#3b82f6]">
-                    and more ...
-                </a>
             </div>
         </div>
     </section>
