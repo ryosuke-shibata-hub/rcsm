@@ -9,7 +9,7 @@ return [
             "DRIFT" => 1,
             "ON_ROAD" => 2,
             "OFF_ROAD" => 3,
-            "CRAWLER" => 5,
+            "CRAWLER" => 4,
         ],
     ],
 ];
