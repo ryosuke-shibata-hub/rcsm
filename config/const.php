@@ -1,6 +1,12 @@
 <?php
 
 return [
+    "COMMON" => [
+        "DELETE_FLG" => [
+            "ENABLE" => 0,
+            "DISABLE" => 1,
+        ],
+    ],
     "SETTING_LIST" => [
         "GET_COUNT" => 8,
         "GET_COUNT_ALL" => 1000,

@@ -1,7 +1,13 @@
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="mx-auto max-w-screen-md px-4 md:px-8">
     <h2 class="mb-4 text-left text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl xl:mb-12">News</h2>
-
+        <div class="text-right text-sm font-bold text-gray-800 mb-2">
+            <span class="">
+                <a href="/news/all">
+                    All news
+                </a>
+            </span>
+        </div>
     <div class="mb-4 flex items-center justify-between border-t border-b py-4">
       <div class="flex flex-col gap-0.5">
         <span class="block font-bold">Total</span>
