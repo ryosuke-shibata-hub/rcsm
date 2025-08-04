@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SettingList extends Model
 {
+    protected $dates = ['create_date', 'update_date'];
+
     public static function getSettingList($getListCount)
     {
         $settingList = SettingList::where('delete_flg', config('const.SETTING_LIST.SETTING_MAIN_IMG_PASS'))

@@ -18,4 +18,7 @@ return [
             "CRAWLER" => 4,
         ],
     ],
+    "NEWS" => [
+        "LIMIT_COUNT" => 3,
+    ],
 ];
