@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\Main\NewsController;
 use App\Http\Controllers\Setting\SettingListController;
+use App\Http\Controllers\Auth\CertificationController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -15,3 +16,5 @@ Route::get('/setting/list/search/', [SettingListController::class, 'searchFreeWo
 
 Route::get('/news/all', [NewsController::class, 'allNewsList'])->name('allNewsList');
 Route::get('/news/detail/{id}', [NewsController::class, 'newsDetail'])->name('newsDetail');
+
+Route::get('/login', [CertificationController::class, 'loginView'])->name('loginView');
