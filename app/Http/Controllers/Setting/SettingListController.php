@@ -80,4 +80,9 @@ class SettingListController extends Controller
             return view('main.main');
         }
     }
+
+    public function createNewSetting()
+    {
+        return view('main.create_new_setting');
+    }
 }
