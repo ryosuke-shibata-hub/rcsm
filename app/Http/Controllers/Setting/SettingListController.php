@@ -85,4 +85,8 @@ class SettingListController extends Controller
     {
         return view('main.create_new_setting');
     }
+
+    public function createNewSettingPost(Request $request) {
+
+    }
 }
