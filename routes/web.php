@@ -10,7 +10,7 @@ use App\Http\Controllers\Setting\SettingListController;
 // });
 Route::get('/',[MainController::class, 'Main'])->name('main');
 Route::get('/setting/create', [SettingListController::class, 'createNewSetting'])->name('createNewSetting');//セッティングの新規作成
-Route::post('/setting/new/create', [SettingListController::class, 'createNewSettingPost'])->name('createNewSettingPost');//すべてのセッティングリストを表示
+Route::post('/setting/new/create', [SettingListController::class, 'createNewSettingPost'])->name('createNewSettingPost');//新規セッティング作成
 
 Route::get('/setting/detail/{id}', [SettingListController::class, 'Detail'])->name('setting_detail');//セッティングの詳細画面
 Route::get('/setting/list/all', [SettingListController::class, 'allSettingList'])->name('setting_all_list');//すべてのセッティングリストを表示
