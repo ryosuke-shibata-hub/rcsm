@@ -1,39 +1,39 @@
 <h1 class="font-medium text-1xl">Device List</h1>
-<div class="mt-8 grid lg:grid-cols-6 gainput-8">
+<div class="mt-8 grid lg:grid-cols-4 gap-8">
     <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Transmitter</label>
-        <input class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        <p class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full p-1">
             {{ $targetSettingDetail->transmitter }}
-        </input>
+        </p>
     </div>
     <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Receiver</label>
-        <input class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        <p class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full p-1">
             {{ $targetSettingDetail->receiver }}
-        </input>
+        </p>
     </div>
     <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Esc</label>
-        <input class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        <p class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full p-1">
             {{ $targetSettingDetail->esc }}
-        </input>
+        </p>
     </div>
     <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Servo</label>
-        <input class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        <p class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full p-1">
             {{ $targetSettingDetail->servo }}
-        </input>
+        </p>
     </div>
     <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Gyro</label>
-        <input class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        <p class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full p-1">
             {{ $targetSettingDetail->gyro }}
-        </input>
+        </p>
     </div>
     <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Motor</label>
-        <input class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        <p class="bg-gray-50 border border-gray-200 rounded inputy-1 inputx-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full p-1">
             {{ $targetSettingDetail->motor }}
-        </input>
+        </p>
     </div>
 </div>

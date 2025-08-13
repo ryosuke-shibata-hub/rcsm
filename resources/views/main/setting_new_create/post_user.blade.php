@@ -9,6 +9,14 @@
         </input>
     </div>
     <div>
+        <label class="text-sm text-gray-700 block mb-1 font-medium">SettingTitle<span class="text-xs text-red-600">※</span></label>
+        <input
+            required
+            name="SettingTitle"
+            class="bg-gray-50 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+        </input>
+    </div>
+    <div>
         <label class="text-sm text-gray-700 block mb-1 font-medium">Comment<span class="text-xs text-red-600">※</span></label>
         <textarea
             required
@@ -23,7 +31,7 @@
         </input>
     </div>
     <div>
-        <label class="text-sm text-gray-700 block mb-1 font-medium">Category</label>
+        <label class="text-sm text-gray-700 block mb-1 font-medium">Category<span class="text-xs text-red-600">※</span></label>
         <div>
                 <select
                     name="Category"

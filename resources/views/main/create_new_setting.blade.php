@@ -10,7 +10,7 @@
             </div>
             <div class="pt-2">
                 <div class="p-8 rounded border border-gray-200">
-                    <form action="/setting/new/create" method="POST">
+                    <form action="/setting/new/create" method="POST" enctype="multipart/form-data">
                         @csrf
                         @include('main.setting_new_create.post_user')
                         <div class="py-3"></div>
@@ -19,6 +19,10 @@
                         @include('main.setting_new_create.new_device_setting')
                         <div class="py-3"></div>
                         @include('main.setting_new_create.new_other_setting')
+                        <div class="">
+                            <span class="text-xs font-bold text-red-500">※</span>
+                            <span class="text-xs font-bold text-gray-700">ゲストユーザーでの投稿の場合、セッティングを登録後に編集することができません。</span>
+                        </div>
                         <div class="text-center py-5">
                             <button class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Create!!</button>
                         </div>

@@ -18,6 +18,10 @@ return [
             "CRAWLER" => 4,
         ],
     ],
+    "STORE_IMG" => [
+        "SETTING_MAIN_IMG" => "settingMainImg",
+        "DEFAULT" => "/storage/settingMainImg/noimage.jpg",
+    ],
     "NEWS" => [
         "LIMIT_COUNT" => 3,
     ],

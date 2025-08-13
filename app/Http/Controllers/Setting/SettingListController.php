@@ -7,9 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\SettingList;
+use App\Models\settingDetail;
+use App\Models\settingDetailDevice;
+use App\Models\OtherSetting;
 
 use Log;
-
+use DB;
 class SettingListController extends Controller
 {
     public function Detail($id)
@@ -49,7 +52,7 @@ class SettingListController extends Controller
     {
         try {
             if (empty($keyword || $target)) {
-                return view('404');
+                return view('error.http_status.404');
             }
 
             $settingList = SettingList::searchSettingList($target, $keyword);
@@ -94,6 +97,7 @@ class SettingListController extends Controller
 
         $validateData = $request->validate([
             'PostName' => ['required', 'max:20'],
+            'SettingTitle' => ['required', 'max:20'],
             'Comment' => ['required', 'max:255'],
             'Category' => ['required','integer:strict','in:1,2,3,4'],
             'FrontCamber' => ['nullable','regex:/^[-+]?\d{1,2}(\.\d{1})?$/'],
@@ -112,7 +116,7 @@ class SettingListController extends Controller
             'RearHeight' => ['nullable','regex:/^[-+]?\d{1,2}(\.\d{1})?$/'],
             'PinionGear' => ['nullable','regex:/^\d{1,2}$/'],
             'SpurGear' => ['nullable','regex:/^\d{1,2}$/'],
-            'GearRatio' => ['nullable','regex:/^\d{1,2}(\.\d{1})?$/'],
+            'GearRatio' => ['nullable','regex:/^\d{1,2}(\.\d{2})?$/'],
             'Transmitter' => ['nullable', 'max:30'],
             'Receiver' => ['nullable', 'max:30'],
             'Esc' => ['nullable', 'max:30'],
@@ -121,6 +125,72 @@ class SettingListController extends Controller
             'Motor' => ['nullable', 'max:30'],
             'OtherSetting' => ['nullable', 'max:500'],
         ]);
-        dd($request);
+
+        try {
+
+            if ($request->file('SettingImg')) {
+                $storeImgFile = $request->file('SettingImg')->store('public/'.config('const.STORE_IMG.SETTING_MAIN_IMG'));
+            } else {
+                $storeImgFile = config('const.STORE_IMG.DEFAULT');
+            }
+
+            DB::beginTransaction();
+
+            $registrationSettingList = [
+                'PostName' => $request->PostName,
+                'SettingTitle' => $request->SettingTitle,
+                'Category' => $request->Category,
+            ];
+
+            $createSettingListData = SettingList::createSettingList($registrationSettingList, $storeImgFile);
+            $settingId = $createSettingListData->setting_id;
+
+            $registrationSettingDetailList = [
+                'SettingComment' => $request->Comment,
+                'FrontCamber' => $request->FrontCamber,
+                'RearCamber' => $request->RearCamber,
+                'FrontToe' => $request->FrontToe,
+                'RearToe' => $request->RearToe,
+                'FrontCaster' => $request->FrontCaster,
+                'RearCaster' => $request->RearCaster,
+                'FrontSkid' => $request->FrontSkid,
+                'RearSkid' => $request->RearSkid,
+                'FrontDumperSpring' => $request->FrontDumperSpring,
+                'RearDumperSpring' => $request->RearDumperSpring,
+                'FrontDumperOil' => $request->FrontDumperOil,
+                'RearDumperOil' => $request->RearDumperOil,
+                'FrontHeight' => $request->FrontHeight,
+                'RearHeight' => $request->RearHeight,
+                'PinionGear' => $request->PinionGear,
+                'SpurGear' => $request->SpurGear,
+                'GearRatio' => $request->GearRatio,
+            ];
+            $createSettingDetailData = settingDetail::createSettingDetail($registrationSettingDetailList, $settingId);
+
+            $registrationSettingDeviceList = [
+                'Transmitter' => $request->Transmitter,
+                'Receiver' => $request->Receiver,
+                'Esc' => $request->Esc,
+                'Servo' => $request->Servo,
+                'Gyro' => $request->Gyro,
+                'Motor' => $request->Motor,
+            ];
+            $createSettingDeviceData = settingDetailDevice::createSettingDevice($registrationSettingDeviceList, $settingId);
+
+            $registrationOtherSetting = [
+                'OtherSetting' => $request->OtherSetting,
+            ];
+            $createSettingOtherData = OtherSetting::createSettingOther($registrationOtherSetting, $settingId);
+
+
+            Log::debug('新規投稿');
+            DB::commit();
+
+            return redirect('/');
+
+        } catch (\Throwable $th) {
+            Log::error("例外処理",[$th]);
+            return view('error.http_status.404');
+        }
     }
 }
