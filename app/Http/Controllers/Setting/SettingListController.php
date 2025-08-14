@@ -27,7 +27,7 @@ class SettingListController extends Controller
         } catch (\Throwable $th) {
             Log::error("例外処理",[$th]);
 
-            return view('main.main');
+            return view('error.http_status.404');
         }
 
     }
@@ -129,7 +129,7 @@ class SettingListController extends Controller
         try {
 
             if ($request->file('SettingImg')) {
-                $storeImgFile = $request->file('SettingImg')->store('public/'.config('const.STORE_IMG.SETTING_MAIN_IMG'));
+                $storeImgFile = $request->file('SettingImg')->store(config('const.STORE_IMG.SETTING_MAIN_IMG'), 'public');
             } else {
                 $storeImgFile = config('const.STORE_IMG.DEFAULT');
             }

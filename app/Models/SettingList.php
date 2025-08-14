@@ -65,7 +65,7 @@ class SettingList extends Model
         $resultSettingList->create_user_name = $registrationSettingList['PostName'];
         $resultSettingList->setting_title = $registrationSettingList['SettingTitle'];
         $resultSettingList->category = $registrationSettingList['Category'];
-        $resultSettingList->setting_img_main = $storeImgFile;
+        $resultSettingList->setting_img_main = "/storage/" . $storeImgFile;
         $resultSettingList->delete_flg = config('const.COMMON.DELETE_FLG.ENABLE');
         $resultSettingList->create_date = now();
         $resultSettingList->update_date = now();

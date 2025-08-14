@@ -19,7 +19,7 @@ return [
         ],
     ],
     "STORE_IMG" => [
-        "SETTING_MAIN_IMG" => "settingMainImg",
+        "SETTING_MAIN_IMG" => "/settingMainImg",
         "DEFAULT" => "/storage/settingMainImg/noimage.jpg",
     ],
     "NEWS" => [
