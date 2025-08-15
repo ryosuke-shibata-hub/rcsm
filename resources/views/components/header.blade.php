@@ -12,7 +12,7 @@
       <a class="mr-5 hover:text-gray-900" href="/">Top</a>
       <a class="mr-5 hover:text-gray-900" href="/setting/list/all">All Setting</a>
       <a class="mr-5 hover:text-gray-900" href="/news/all">Wthat's News</a>
-      <a class="mr-5 hover:text-gray-900">Infomation</a>
+      <a class="mr-5 hover:text-gray-900" href="/infomation">Infomation</a>
       <label for="Search">
         <div class="relative">
             <form action="/setting/list/search" method="GET">

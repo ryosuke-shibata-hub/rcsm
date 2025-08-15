@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\Main\NewsController;
+use App\Http\Controllers\Main\InfomationController;
 use App\Http\Controllers\Setting\SettingListController;
 
 // Route::get('/', function () {
@@ -20,3 +21,5 @@ Route::get('/setting/list/search/', [SettingListController::class, 'searchFreeWo
 
 Route::get('/news/all', [NewsController::class, 'allNewsList'])->name('allNewsList');
 Route::get('/news/detail/{id}', [NewsController::class, 'newsDetail'])->name('newsDetail');
+
+Route::get('/infomation', [InfomationController::class, 'infomationVeiw'])->name('infomationView');
