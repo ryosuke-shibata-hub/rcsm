@@ -8,4 +8,13 @@ use Illuminate\Http\Request;
 class CertificationController extends Controller
 {
 
+    public function loginView()
+    {
+        return view('main.auth.login_view');
+    }
+
+    public function registerAccount()
+    {
+        return view('main.auth.register_account');
+    }
 }
